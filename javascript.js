@@ -1,28 +1,32 @@
-var gc = document.getElementById('gridcont');
-temp = 0;
+container = document.getElementsByClassName('container');
+var size = 16;
+var i = 0;
+var blocks;
 
+function calcwidth() {
+    var width = 768 / size;
+    return width + 'px';
+}
 
-
-
-
-function makegrid() {
-  
-    if (temp < 256){
-        
-           subdiv = document.createElement('div');
-            subdiv.setAttribute('class', 'subdiv');
-            subdiv.style.cssText = 'background-color: Grey; width: 40px ; height: 40px; display: block; justify-content: center !important; margin: 0px ; padding: 0px; border: 0.1px solid darkgrey;';
-            gc.appendChild(subdiv);
-            temp++;
-            makegrid();
-    }
-    else{
-        return;
-    }
-
-
+function calcheight() {
+    var height = 768 / size;
+    return height + 'px';
 }
 
 
-
-
+function creategrid() {
+    blocks = size * size;
+    if (i < blocks ){
+        var div = document.createElement('div');
+        div.className = 'block';
+        div.style.width = calcwidth();
+        div.style.height = calcheight();
+        div.style.float = 'left';
+        div.style.border = '1px solid black';
+        div.style.boxSizing = 'border-box';
+        div.style.backgroundColor = 'white';
+        container[0].appendChild(div); 
+        i++;
+        creategrid();
+    }
+}
