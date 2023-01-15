@@ -1,3 +1,4 @@
+
 body {
     background-color: rgb(36, 36, 36);
     margin: 0;
@@ -17,6 +18,10 @@ body {
     justify-content: center;
 }
 
+#id {
+  align-content: center;
+}
+
 .button {
     font-size: 24px;
     border-radius: 12px;
@@ -34,3 +39,63 @@ body {
     height: 768px;
 }
 
+.slide {
+    font-size: 24px;
+    border-radius: 12px;
+    margin: 6px;
+    margin-top: -26px;
+    background: red;
+}
+
+.SliderTxt {
+    font-size: 24px;
+    border-radius: 12px;
+    margin: 6px;
+    margin-top: -26px;
+    color: aliceblue;
+}
+
+
+#color {
+  font-size: 24px;
+  border-radius: 12px;
+  margin: 6px;
+  margin-top: -21px;
+  background: rgb(255, 255, 255);
+  border-color: white;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+
+  
+  input[type='range'] {
+    -webkit-appearance: none;
+    background-color: var(--primary-light);
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    border: 1px solid var(--primary-dark);
+    border-radius: 25px;
+    background: rgb(106, 106, 106);
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 25px;
+    margin-top: -1px;
+    background: white;
+  }
+
+  

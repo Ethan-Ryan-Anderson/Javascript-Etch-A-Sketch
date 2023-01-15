@@ -2,10 +2,14 @@ container = document.getElementsByClassName('container');
 var size = 20;
 var i = 0;
 var blocks;
+var color = 'black';
+slide = document.getElementById('slider');
+var sliderp = document.getElementById('sliderP');
+
 
 //run creategrid function on page load
 creategrid();
-
+hover();
 
 //calculate width by, dividing 768 (the size of container) by the size of the grid
 function calcwidth() {
@@ -38,10 +42,6 @@ function creategrid() {
         div.style.float = 'left';
         div.style.border = '2px rgb(100, 100, 100) solid';
         div.style.margin = '-2px';
-        div.addEventListener('mouseover', function () {
-            this.style.backgroundColor = 'black';
-        }
-        );
         div.style.backgroundColor = 'grey';
         container[0].appendChild(div); 
         i++;
@@ -57,16 +57,20 @@ function Clear() {
     }
 
 }
+
+
 function sizing() {
-    size = prompt('Enter a number between 1 and 100');
-    if (size > 100 || size < 1) {
-        alert('Please enter a number between 1 and 100');
-        sizing();
-    }
-    else {
-        Clear();
-        creategrid();
-    }
+    size = slide.value;
+    sliderp.innerHTML = size + "x" + size;
+    Clear();
+    creategrid();
+    hover();
+    console.log(size);
+}
+
+function sizetxt() {
+    size = slide.value;
+    sliderp.innerHTML = size + "x" + size;
 }
 
 function wipe() {
@@ -76,3 +80,21 @@ function wipe() {
     }
     );
 }
+
+function Color(){
+    color = document.getElementById('color').value;
+    hover();
+}
+
+function hover() {
+    divs = document.querySelectorAll('.block')
+    divs.forEach(function (div) {
+        div.addEventListener('mouseover', function () {
+            this.style.backgroundColor = color;
+        }
+        );
+    }
+    );
+
+}
+

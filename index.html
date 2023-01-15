@@ -9,14 +9,18 @@
     <script src="javascript.js" defer></script>
 </head>
 <body>
-    <h1 class="title">Etch A Sketch Online!</h1>
-    <div class="buttons">
-        <button class="button" id="clear" onclick="wipe()">Wipe</button>
-        <button class="button" id="sizing" onclick="sizing()">Custom Size</button>
-        <button class="button" >3</button>
-        <button class="button" >4</button>
-        <button class="button" >5</button>
-    </div>
+    
+        <h1 class="title">Etch A Sketch Online!</h1>
+        <div id="UI"></div>
+            <div class="buttons">
+            <button class="button" id="clear" onclick="wipe()">Wipe</button>
+            <input type="color" id="color" value="#000000" onchange="Color()">
+             <input type="range" min="1" max="100" value="16" class="slide" id="slider" onchange="sizing()" onmousemove="sizetxt()"> 
+            <p id="sliderP"" class="SliderTxt">16 x 16</p>
+            <br>
+        </div>
+
+</div>
     <div class="cntr">
         <div class="container">
 
