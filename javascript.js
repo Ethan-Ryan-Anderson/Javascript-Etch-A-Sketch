@@ -2,7 +2,7 @@ container = document.getElementsByClassName('container');
 var size = 20;
 var i = 0;
 var blocks;
-var color = 'black';
+var color = '#FF0000';
 slide = document.getElementById('slider');
 var sliderp = document.getElementById('sliderP');
 
